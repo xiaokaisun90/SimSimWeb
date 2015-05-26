@@ -12,6 +12,7 @@ def home(request):
 def register(request):
     print 'first line of register'
     context = {}
+    print request
     # Just display the registration form if this is a GET request
     if request.method == 'GET':
         print 'come into GET'

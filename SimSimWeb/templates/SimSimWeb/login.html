@@ -2,41 +2,74 @@
 <html >
   <head>
     <meta charset="UTF-8">
-
-
     <title>Login Form</title>
         {% load staticfiles %}
-      <link href="{% static 'SimSimWeb/css/login.css' %}" rel="stylesheet" type="text/css">
-
-        <style>
-            @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-            @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-        </style>
-
-
-        <script src="js/prefixfree.min.js"></script>
-
-
+      <link href="{% static 'SimSimWeb/css/register.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% static 'SimSimWeb/js/register.js' %}"></script>
   </head>
 
   <body>
+<div class="form">
 
-    <div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Sim<span>Sim</span></div>
-		</div>
-		<br>
-		<div class="login">
-				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
-				<input type="button" value="Login">
-		</div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <ul class="tab-group">
+        <li class="tab active"><a href="/register/">Sign Up</a></li>
+        <li class="tab"><a href="/login/">Log In</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="signup">
+          <h1>Sign Up for Free</h1>
+
+          <form action="/" method="post">
+
+            <div class="field-wrap">
+              <label>
+                Username<span class="req">*</span>
+              </label>
+                {{ form.username }}
+
+            </div>
+              <div class="field-wrap">
+              <label>
+                Password<span class="req">*</span>
+              </label>
+                {{ form.password }}
+            </div>
 
 
+          <button type="submit" class="button button-block"/>Get Started</button>
 
+          </form>
 
+        </div>
 
-  </body>
-</html>
+        <div id="login">
+          <h1>Welcome Back!</h1>
+
+          <form action="/" method="post">
+
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+          <button class="button button-block"/>Log In</button>
+
+          </form>
+
+        </div>
+
+      </div><!-- tab-content -->
+
+</div> <!-- /form -->
