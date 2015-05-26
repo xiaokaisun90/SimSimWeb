@@ -27,11 +27,11 @@ class Properties(models.Model):
 class Locks(models.Model):
     lock_id = models.IntegerField(primary_key=True)
     lock_purpose = models.CharField(max_length=64)
-    is_lock_configured = models.BooleanField()
+    is_lock_configured = models.BooleanField(default=False)
     description = models.TextField()
-    is_lock_active = models.BooleanField()
+    is_lock_active = models.BooleanField(default=False)
     lock_secret = models.CharField(max_length=255)
-    is_locked = models.BooleanField()
+    is_locked = models.BooleanField(default=False)
     subscription_expiry_date = models.DateTimeField()
     subscription_last_paid_date = models.DateTimeField()
     subscription_expiry_amount = models.IntegerField()
@@ -72,10 +72,10 @@ class UserIntermediateData(models.Model):
 
 class UserNotificationPreferences(models.Model):
     user_id = models.IntegerField()
-    lock_unlock_notification_choice = models.BooleanField()
-    unlocked_5mins_notification_choice = models.BooleanField()
-    guest_request_access_notification_choice = models.BooleanField()
-    wifi_disconnected_notification_choice = models.BooleanField()
+    lock_unlock_notification_choice = models.BooleanField(default=False)
+    unlocked_5mins_notification_choice = models.BooleanField(default=False)
+    guest_request_access_notification_choice = models.BooleanField(default=False)
+    wifi_disconnected_notification_choice = models.BooleanField(default=False)
 
 class UserState(models.Model):
     user_state_id = models.IntegerField(primary_key=True)
