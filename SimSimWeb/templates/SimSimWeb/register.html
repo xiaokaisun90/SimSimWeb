@@ -25,6 +25,7 @@
         {% csrf_token %}
           <div class="top-row">
             <div class="field-wrap">
+                {{form.username.errors}}
               <label>
                 Username<span class="req">*</span>
               </label>
@@ -32,6 +33,7 @@
             </div>
         
             <div class="field-wrap">
+                {{form.primary_mobile_number.errors}}
               <label>
                 Phone Number<span class="req">*</span>
               </label>
@@ -40,6 +42,7 @@
           </div>
 
           <div class="field-wrap">
+              {{form.password1.errors}}
             <label>
               Password<span class="req">*</span>
             </label>
@@ -47,6 +50,7 @@
           </div>
           
           <div class="field-wrap">
+               {{form.password2.errors}}
             <label>
               Confirm Password<span class="req">*</span>
             </label>

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9f768-bdf2-44fd-aa88-d87e92fb4392" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/forms.py" afterPath="$PROJECT_DIR$/SimSimWeb/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/models.py" afterPath="$PROJECT_DIR$/SimSimWeb/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/views.py" afterPath="$PROJECT_DIR$/SimSimWeb/views.py" />
     </list>
     <ignored path="SimSimWeb.iws" />
@@ -33,8 +33,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1095">
-              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1095">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -55,18 +55,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapps/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1380">
+            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1380">
               <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14962594" vertical-offset="0" max-vertical-offset="1950">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -89,8 +89,8 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1440">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            <state vertical-scroll-proportion="-50.625" vertical-offset="90" max-vertical-offset="1500">
+              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1200">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.32360741" vertical-offset="808" max-vertical-offset="1185">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,14 +148,14 @@
       <list>
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/manage_properties.html" />
-        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html" />
-        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html" />
         <option value="$PROJECT_DIR$/webapps/settings.py" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/forms.py" />
-        <option value="$PROJECT_DIR$/SimSimWeb/views.py" />
         <option value="$PROJECT_DIR$/SimSimWeb/models.py" />
+        <option value="$PROJECT_DIR$/SimSimWeb/views.py" />
+        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html" />
+        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html" />
       </list>
     </option>
   </component>
@@ -662,14 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1200">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapps/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="401">
@@ -692,6 +684,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3466334" vertical-offset="0" max-vertical-offset="660">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -707,14 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1440">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,6 +721,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1095">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapps/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
@@ -744,23 +749,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1095">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-50.625" vertical-offset="90" max-vertical-offset="1500">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/models.py">
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14962594" vertical-offset="0" max-vertical-offset="1950">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.32360741" vertical-offset="808" max-vertical-offset="1185">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

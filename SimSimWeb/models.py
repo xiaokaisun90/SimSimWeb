@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UserInfo(models.Model):
-    user_id = models.IntegerField(primary_key=True)
+    user_num = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User)
     # user_id = models.IntegerField(max_length=10, null=True)
     primary_mobile_number = models.CharField(max_length=50)

@@ -10,7 +10,8 @@
 
   <body>
 <div class="form">
-
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+     {% csrf_token %}
       <ul class="tab-group">
         <li class="tab active"><a href="/register/">Sign Up</a></li>
         <li class="tab"><a href="/login/">Log In</a></li>
@@ -35,8 +36,6 @@
               </label>
                 {{ form.password }}
             </div>
-
-
           <button type="submit" class="button button-block"/>Get Started</button>
 
           </form>
