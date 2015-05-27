@@ -30,10 +30,8 @@ def register(request):
         new_user = User(username=form.cleaned_data['username'],
                         password=form.cleaned_data['password1'],
                         )
-        new_user_info = UserInfo(user = new_user)
-        # primary_mobile_number=form.cleaned_data['primary_mobile_number']
-        print 'xx', new_user
-        print request.user.id
+        new_user_info = UserInfo(user_id = request.user.id, user = new_user, primary_mobile_number=form.cleaned_data['primary_mobile_number'])
+        print 'xx', new_user_info
         new_user.set_password(new_user.password)
         new_user.save()
         print new_user.password

@@ -3,7 +3,7 @@ from SimSimWeb.models import *
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(max_length=20)
-    primary_mobile_number = forms.CharField(max_length=30)
+    primary_mobile_number = forms.IntegerField()
     password1 = forms.CharField(max_length=30,
                                 widget=forms.PasswordInput())
     password2 = forms.CharField(max_length=30,
@@ -26,10 +26,3 @@ class RegistrationForm(forms.Form):
     def clean_primary_mobile_number(self):
         primary_mobile_number = self.cleaned_data.get('primary_mobile_number')
         return primary_mobile_number
-
-class UserInfoForm(forms.Form):
-    class Meta:
-            model = UserInfo
-    def clean(self):
-        cleaned_data = super(UserInfoForm, self).clean()
-        return cleaned_data
