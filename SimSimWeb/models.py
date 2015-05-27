@@ -1,18 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class User(models.Model):
-    user_id = models.IntegerField(primary_key=True)
-    username = models.CharField(max_length=200)
+class UserInfo(models.Model):
+    # user_id = models.IntegerField(primary_key=True)
+    user = models.OneToOneField(User)
+    # user_id = models.IntegerField(max_length=10, null=True)
     primary_mobile_number = models.CharField(max_length=50)
-    is_mobile_verified = models.CharField(max_length=1)
-    country = models.CharField(max_length=50)
-    account_created = models.DateTimeField()
-    account_verified = models.DateTimeField()
-    password = models.CharField(max_length=100)
-    last_sign_in = models.DateTimeField()
-    is_web_registered = models.CharField(max_length=1)
+    is_mobile_verified = models.CharField(max_length=1, null=True)
+    country = models.CharField(max_length=50, null=True)
+    account_created = models.DateTimeField(null=True)
+    account_verified = models.DateTimeField(null=True)
+    last_sign_in = models.DateTimeField(null=True)
+    is_web_registered = models.CharField(max_length=1, null=True)
     # possible foreign key
-    user_state_id = models.IntegerField()
+    user_state_id = models.IntegerField(null=True)
 
 class Properties(models.Model):
     property_id = models.IntegerField(primary_key=True)

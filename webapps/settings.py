@@ -49,7 +49,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
+LOGIN_URL = '/authentication/login/'
+LOGIN_REDIRECT_URL = '/'
 ROOT_URLCONF = 'webapps.urls'
 
 WSGI_APPLICATION = 'webapps.wsgi.application'

@@ -1,7 +1,9 @@
 from django.contrib.auth import authenticate, login
+from django.db import transaction
 from django.shortcuts import render
 from SimSimWeb.forms import RegistrationForm
 from SimSimWeb.models import *
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -9,10 +11,9 @@ def home(request):
     context = {}
     return render(request, "SimSimWeb/index.html", context)
 
+@transaction.atomic
 def register(request):
-    print 'first line of register'
     context = {}
-    print request
     # Just display the registration form if this is a GET request
     if request.method == 'GET':
         print 'come into GET'
@@ -20,6 +21,7 @@ def register(request):
         return render(request, 'SimSimWeb/register.html', context)
     form = RegistrationForm(request.POST)
     context['form'] = form
+    # print form
     if not form.is_valid():
         print 'form is not valid'
         context['form'] = form
@@ -27,16 +29,21 @@ def register(request):
     else:
         new_user = User(username=form.cleaned_data['username'],
                         password=form.cleaned_data['password1'],
-                        primary_mobile_number=form.cleaned_data['phone_number'])
+                        )
+        new_user_info = UserInfo(user = new_user)
+        # primary_mobile_number=form.cleaned_data['primary_mobile_number']
+        print 'xx', new_user
+        print request.user.id
+        new_user.set_password(new_user.password)
         new_user.save()
+        print new_user.password
         print "username", new_user.username
 
     new_user = authenticate(username=request.POST['username'],
                             password=request.POST['password1'],
                             )
-
-    login(request,new_user)
-    return render(request, "SimSimWeb/index.html",{})
+    login(request, new_user)
+    return render(request, "SimSimWeb/index.html", {})
 
 def dashboard(request):
     context = {}
