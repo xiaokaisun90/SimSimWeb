@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9f768-bdf2-44fd-aa88-d87e92fb4392" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/ocean.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/blog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index-gallery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index-image.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/more-posts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/single-portfolio-image.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/single-portfolio-video.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/single-portfolio.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/single.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/forms.py" afterPath="$PROJECT_DIR$/SimSimWeb/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logofont.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo@2x.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo.png" afterPath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/models.py" afterPath="$PROJECT_DIR$/SimSimWeb/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapps/urls.py" afterPath="$PROJECT_DIR$/webapps/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/views.py" afterPath="$PROJECT_DIR$/SimSimWeb/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimSimWeb.iws" />
@@ -47,7 +35,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1125">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
               <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
@@ -59,80 +47,42 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="1665">
-              <caret line="24" column="97" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="97" />
+            <state vertical-scroll-proportion="-2.9411764" vertical-offset="210" max-vertical-offset="1665">
+              <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lock_activity.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/lock_activity.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1605">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
+      <file leaf-file-name="logo-light.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo-light.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
+      <file leaf-file-name="logo.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapps/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="how_it_works.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="how_it_works.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3903743" vertical-offset="0" max-vertical-offset="1695">
+            <state vertical-scroll-proportion="-15.294118" vertical-offset="0" max-vertical-offset="1695">
               <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css">
+      <file leaf-file-name="dashboard_base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="9900">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="555">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="guest_request.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.90196" vertical-offset="2753" max-vertical-offset="4290">
-              <caret line="258" column="91" selection-start-line="258" selection-start-column="91" selection-end-line="258" selection-end-column="91" />
+            <state vertical-scroll-proportion="0.4774536" vertical-offset="930" max-vertical-offset="4440">
+              <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -147,7 +97,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/manage_properties.html" />
-        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html" />
         <option value="$PROJECT_DIR$/webapps/settings.py" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/login.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/register.html" />
@@ -156,9 +105,10 @@
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html" />
         <option value="$PROJECT_DIR$/webapps/urls.py" />
         <option value="$PROJECT_DIR$/SimSimWeb/views.py" />
-        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/custom.css" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html" />
+        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
+        <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html" />
       </list>
     </option>
   </component>
@@ -279,24 +229,6 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimSimWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimSimWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimSimWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SimSimWeb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -323,8 +255,56 @@
               <option name="myItemId" value="SimSimWeb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimSimWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,8 +320,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css" />
       <recent name="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img" />
+      <recent name="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.SimSimWeb">
@@ -598,7 +578,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -612,7 +592,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -753,14 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3810" max-vertical-offset="4440">
-          <caret line="221" column="17" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3466334" vertical-offset="0" max-vertical-offset="660">
@@ -855,28 +827,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1125">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9900">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="1665">
-          <caret line="24" column="97" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -891,8 +845,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3903743" vertical-offset="0" max-vertical-offset="1695">
+        <state vertical-scroll-proportion="-15.294118" vertical-offset="0" max-vertical-offset="1695">
           <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo-light.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/img/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1125">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9411764" vertical-offset="210" max-vertical-offset="1665">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/assets/global/img/overlay-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/assets/global/img/portlet-expand-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/assets/global/img/portlet-config-icon-white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/assets/global/img/portlet-config-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/dashboard_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4774536" vertical-offset="930" max-vertical-offset="4440">
+          <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
           <folding />
         </state>
       </provider>
