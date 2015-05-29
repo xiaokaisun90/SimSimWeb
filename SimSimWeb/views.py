@@ -46,7 +46,9 @@ def register(request):
 def dashboard(request):
     context = {}
     return render(request, 'SimSimWeb/guest_request.html', context)
-
+def introduction(request):
+    context = {}
+    return render(request, 'SimSimWeb/how_it_works.html', context)
 def guest_list(request):
     print 'in guest_list'
     context = {}

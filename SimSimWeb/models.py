@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UserInfo(models.Model):
+    #user_num is the user_id to avoid the clash with built-in user
     user_num = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User)
-    # user_id = models.IntegerField(max_length=10, null=True)
     primary_mobile_number = models.CharField(max_length=50)
     is_mobile_verified = models.CharField(max_length=1, null=True)
     country = models.CharField(max_length=50, null=True)
@@ -110,6 +110,10 @@ class GuestAccessRequestQueue(models.Model):
     requested_access_start_time = models.DateTimeField()
     requested_access_end_time = models.DateTimeField()
     request_access_time_stamp = models.IntegerField()
+    mobile_phone_number = models.IntegerField()
+    repeat = models.BooleanField()
+    access_times = models.IntegerField()
+
 
 class ApprovedAccessRequest(models.Model):
     request_id = models.IntegerField(primary_key=True)
