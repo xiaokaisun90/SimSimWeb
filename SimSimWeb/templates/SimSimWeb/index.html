@@ -55,50 +55,27 @@
 	<section class="full video" id="home">
 
 		<h1 class="mega">Opening Up Possibilities</h1>
-		<a class="mute muted" href="#"><i class="fa fa-volume-up"></i></a>
-
+{#		<a class="mute muted" href="#"><i class="fa fa-volume-up"></i></a>#}
+        <iframe src="https://player.vimeo.com/video/129704767?autoplay=1&loop=1&color=ff0179" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</section>
 	
-{#	<section class="small-padding dark-wrapper">#}
-{#			#}
-{#		<div class="wrapper">#}
-{#			<p class="centered">© 2015 SimSim. All rights reserved.</p>#}
-{#			#}
-{#			<div class="clear"></div><!--CLEAR FLOATS-->#}
-{#		</div>#}
-{#		#}
-{#	</section>#}
-{#	#}
+	<section class="small-padding dark-wrapper">
+
+		<div class="wrapper">
+			<p class="centered">© 2015 SimSim. All rights reserved.</p>
+
+			<div class="clear"></div><!--CLEAR FLOATS-->
+		</div>
+
+	</section>
+
 	
 <!--LOAD SCRIPTS-->
 <script type="text/javascript" src="{% static 'SimSimWeb/js/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'SimSimWeb/js/plugins.js' %}"></script>
 <script type="text/javascript" src="{% static 'SimSimWeb/js/video.js' %}"></script>
 <script type="text/javascript" src="{% static 'SimSimWeb/js/custom.js' %}"></script>
-<script>
-    $(function() {
-        var BV = new $.BigVideo({useFlashForFirefox:false});
-		BV.init();
-		if ((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
-		    BV.show('img/cover.png');
-		} else {
-		    BV.show('https://pdlvimeocdn-a.akamaihd.net/23239/674/375513026.mp4?token2=1433394491_7bea10c47be8cb75da1122fcef288ba5&aksessionid=d44de8e5235ae6a5');
-		}
-		BV.getPlayer().volume(0);
-		
-		$('body').on('click', '.mute.muted', function(){
-			BV.getPlayer().volume(0.8);
-			$(this).removeClass('muted').addClass('unmuted');
-			return false;
-		});
-		
-		$('body').on('click', '.mute.unmuted', function(){
-			BV.getPlayer().volume(0);
-			$(this).removeClass('unmuted').addClass('muted');
-			return false;
-		});
-    });
-</script>
+
 
 </body>
 </html>
