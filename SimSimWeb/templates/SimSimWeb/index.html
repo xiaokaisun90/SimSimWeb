@@ -59,16 +59,16 @@
 
 	</section>
 	
-	<section class="small-padding dark-wrapper">
-			
-		<div class="wrapper">
-			<p class="centered">© 2015 SimSim. All rights reserved.</p>
-			
-			<div class="clear"></div><!--CLEAR FLOATS-->
-		</div>
-		
-	</section>
-	
+{#	<section class="small-padding dark-wrapper">#}
+{#			#}
+{#		<div class="wrapper">#}
+{#			<p class="centered">© 2015 SimSim. All rights reserved.</p>#}
+{#			#}
+{#			<div class="clear"></div><!--CLEAR FLOATS-->#}
+{#		</div>#}
+{#		#}
+{#	</section>#}
+{#	#}
 	
 <!--LOAD SCRIPTS-->
 <script type="text/javascript" src="{% static 'SimSimWeb/js/jquery.js' %}"></script>
@@ -82,9 +82,7 @@
 		if ((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
 		    BV.show('img/cover.png');
 		} else {
-		    BV.show('http://video-js.zencoder.com/oceans-clip.mp4',{
-		    	altSource:'http://video-js.zencoder.com/oceans-clip.ogv'
-		    });
+		    BV.show('https://pdlvimeocdn-a.akamaihd.net/23239/674/375513026.mp4?token2=1433394491_7bea10c47be8cb75da1122fcef288ba5&aksessionid=d44de8e5235ae6a5');
 		}
 		BV.getPlayer().volume(0);
 		

@@ -13,7 +13,9 @@
 							<h4 class="modal-title">Repeat</h4>
 						</div>
 						<div class="modal-body">
+                            {% load staticfiles %}
 							 <form action="#" class="form-horizontal form-row-sepe">
+                                  {% csrf_token %}
 								<div class="form-body">
 									<div class="form-group">
 										<label class="control-label col-md-3">Repeats:</label>
@@ -114,7 +116,7 @@
 			<!-- BEGIN PAGE BREADCRUMB -->
 			<ul class="page-breadcrumb breadcrumb">
 				<li>
-					<a href="SimSim.html">Home</a>
+					<a href="/">Home</a>
 					<i class="fa fa-circle"></i>
 				</li>
 				<li class="active">
@@ -211,7 +213,9 @@
 												<span class="input-group-addon">
 												<i class="fa fa-mobile-phone"></i>
 												</span>
-												<input type="text" class="form-control" placeholder="Cell Numbers" name="mobile">
+												<div type="text" class="form-control" placeholder="Cell Numbers" name="mobile">
+                                                    {{ form.mobile_phone_number }}
+                                                </div>
 											</div>
 										</div>
 									</div>
@@ -221,7 +225,9 @@
 										<label class="control-label col-md-3">Access Start</label>
 										<div class="col-md-3">
 											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
-												<input type="text" class="form-control" readonly>
+												<div type="text" class="form-control" readonly>
+                                                     {{ form.requested_access_start_time }}
+                                                </div>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 												</span>
@@ -235,7 +241,9 @@
 										<label class="control-label col-md-3">Access End</label>
 										<div class="col-md-3">
 											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
-												<input type="text" class="form-control" readonly>
+                                                <div type="text" class="form-control" readonly>
+                                                     {{ form.requested_access_end_time }}
+                                                </div>
 												<span class="input-group-btn">
 												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
 												</span>
@@ -248,7 +256,11 @@
 									<div class="form-group">
 										<div class="col-md-3"></div>
 										<div class="checkbox">
-									      	<label><input type="checkbox" name="repeat"> Repeat </label>
+									      	<label><div type="checkbox" name="repeat">
+                                                {{ form.repeat }}
+                                                Repeat
+                                                </div>
+                                            </label>
 									    </div>
 									</div>
 									<h4 class="form-section"> How many times? </h4>
@@ -256,9 +268,17 @@
 										<div class="col-md-3"></div>
 										<div class="radio-list">
 											<label class="radio-inline">
-											<input type="radio" name="times" value="option1"> checked> One time access </label>
+											<div type="radio" name="times" value="option1">
+                                                {{ form.access_times }}
+                                                One time access
+                                            </div>
+                                            </label>
 											<label class="radio-inline">
-											<input type="radio" name="times" value="option2"> Multiple access </label>
+											<div type="radio" name="times" value="option2">
+                                                {{ form.access_times }}
+                                                Multiple access
+                                            </div>
+                                            </label>
 										</div>
 									</div>
 									<div class="form-actions">
