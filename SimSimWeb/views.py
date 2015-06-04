@@ -30,10 +30,11 @@ def register(request):
         new_user = User(username=form.cleaned_data['username'],
                         password=form.cleaned_data['password1'],
                         )
-        new_user_info = UserInfo(user_num=request.user.id, user=new_user, primary_mobile_number=form.cleaned_data['primary_mobile_number'])
-        print 'xx', new_user_info.user_num
         new_user.set_password(new_user.password)
         new_user.save()
+        new_user_info = UserInfo(user_id=new_user, primary_mobile_number=form.cleaned_data['primary_mobile_number'])
+        print 'xx', new_user_info.user_id
+        
         print new_user.password
         print "username", new_user.username
 
@@ -66,6 +67,8 @@ def dashboard(request):
 def introduction(request):
     context = {}
     return render(request, 'SimSimWeb/how_it_works.html', context)
+
+
 def guest_list(request):
     print 'in guest_list'
     context = {}
@@ -76,6 +79,8 @@ def family(request):
     return render(request, 'SimSimWeb/family.html', context)
 
 def lock_activity(request):
+    print(request.user)
+
     context = {}
     return render(request, 'SimSimWeb/lock_activity.html', context)
 def manage_properties(request):

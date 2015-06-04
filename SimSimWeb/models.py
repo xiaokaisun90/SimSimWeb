@@ -65,7 +65,7 @@ class Locks(models.Model):
     is_locked = models.BooleanField(default=False)
     subscription_expiry_date = models.DateTimeField()
     subscription_last_paid_date = models.DateTimeField()
-    subscription_last_paid_amount = models.IntegerField()
+    subscription_expiry_amount = models.IntegerField()
     subscription_plan_id = models.ForeignKey(SubscriptionPlans)
     family_count = models.IntegerField()
     guest_count = models.IntegerField()
