@@ -28,19 +28,33 @@ class RegistrationForm(forms.Form):
         return primary_mobile_number
 
 class GuestAccessRequestForm(forms.Form):
-    class Meta:
-        model = GuestAccessRequestQueue
+    mobile_phone_number = forms.IntegerField()
+    property_id = forms.IntegerField()
+    requested_access_start_time = forms.DateTimeField()
+    requested_access_end_time = forms.DateTimeField()
+    request_access_time_stamp = forms.IntegerField()
+    repeat = forms.BooleanField()
+    access_times = forms.BooleanField()
+
+    # class Meta:
+    #     model = GuestAccessRequestQueue
+    #     exclude = ()
 
     def clean(self):
-        property_id = self.cleaned_data.get('property_id')
-        mobile_phone_number = self.cleaned_data.get('mobile_phone_number')
-        requested_access_start_time = self.cleaned_data.get('requested_access_start_time')
-        requested_access_end_time = self.cleaned_data.get('requested_access_end_time')
-        if not property_id:
-            return forms.ValidationError('You should select the property')
-        if not mobile_phone_number:
-            return forms.ValidationError('You should enter the mobile phone number')
-        if not requested_access_start_time:
-            return forms.ValidationError('You should enter requested_access_start_time')
-        if not requested_access_end_time:
-            return forms.ValidationError('You should enter requested_access_end_time')
+        cleaned_data = super(GuestAccessRequestForm, self).clean()
+        return cleaned_data
+
+        #
+        # property_id = self.cleaned_data.get('property_id')
+        # mobile_phone_number = self.cleaned_data.get('mobile_phone_number')
+        # requested_access_start_time = self.cleaned_data.get('requested_access_start_time')
+        # requested_access_end_time = self.cleaned_data.get('requested_access_end_time')
+        #
+        # if not property_id:
+        #     return forms.ValidationError('You should select the property')
+        # if not mobile_phone_number:
+        #     return forms.ValidationError('You should enter the mobile phone number')
+        # if not requested_access_start_time:
+        #     return forms.ValidationError('You should enter requested_access_start_time')
+        # if not requested_access_end_time:
+        #     return forms.ValidationError('You should enter requested_access_end_time')

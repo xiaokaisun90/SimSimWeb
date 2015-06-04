@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.db import transaction
 from django.shortcuts import render
-from SimSimWeb.forms import RegistrationForm
+from SimSimWeb.forms import *
 from SimSimWeb.models import *
 from django.contrib.auth.decorators import login_required
 
@@ -30,7 +30,7 @@ def register(request):
         new_user = User(username=form.cleaned_data['username'],
                         password=form.cleaned_data['password1'],
                         )
-        new_user_info = UserInfo(user_num = request.user.id, user = new_user, primary_mobile_number=form.cleaned_data['primary_mobile_number'])
+        new_user_info = UserInfo(user_num=request.user.id, user=new_user, primary_mobile_number=form.cleaned_data['primary_mobile_number'])
         print 'xx', new_user_info.user_num
         new_user.set_password(new_user.password)
         new_user.save()
@@ -43,8 +43,25 @@ def register(request):
     login(request, new_user)
     return render(request, "SimSimWeb/index.html", {})
 
+@transaction.atomic
 def dashboard(request):
     context = {}
+    if request.method == 'GET':
+        print 'come into GET'
+        context['form'] = GuestAccessRequestForm()
+        print context
+        return render(request, 'SimSimWeb/guest_request.html', context)
+    form = RegistrationForm(request.POST)
+    context['form'] = form
+    if not form.is_valid():
+        print 'form is not valid'
+        context['form'] = form
+        return render(request, 'SimSimWeb/guest_request.html', context)
+    else:
+        new_guest_request = GuestAccessRequestQueue(property_id=request.POST['property_id'],
+
+        )
+
     return render(request, 'SimSimWeb/guest_request.html', context)
 def introduction(request):
     context = {}

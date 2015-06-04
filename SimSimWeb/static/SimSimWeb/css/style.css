@@ -378,8 +378,9 @@ header * {
 
 h1.mega {
 	position: relative;
-	top: 50%;
-	margin-top: -70px;
+	top: 130%;
+	margin-bottom: -70px;
+    color:blue;
 }
 
 .big h1.mega {
@@ -606,13 +607,13 @@ footer {
 @media only screen and (max-width: 767px) {
 
 	.wrapper { width:479px; margin: 0 auto; position:relative; }
-	
+
 	.one_half, .one_third, .two_thirds, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth, .three_fourths { width: 100%; }
-	
+
 	#comments li ul {
 		padding-left: 0px;
 	}
-	
+
 	.portfolio-isotope {
 		width: 509px;
 	}
