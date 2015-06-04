@@ -13,7 +13,6 @@ class UserRoleTypes(models.Model):
 
 class UserInfo(models.Model):
     #user_num is the user_id to avoid the clash with built-in user
-    user_num = models.IntegerField(primary_key=True)
     user_id = models.OneToOneField(User, primary_key = True)
     primary_mobile_number = models.CharField(max_length=50)
     is_mobile_verified = models.CharField(max_length=1, null=True)
