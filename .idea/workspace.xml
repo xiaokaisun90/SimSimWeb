@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9f768-bdf2-44fd-aa88-d87e92fb4392" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" afterPath="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css" afterPath="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimSimWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17067307" vertical-offset="829" max-vertical-offset="1290">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.4509804" vertical-offset="694" max-vertical-offset="1290">
+              <caret line="58" column="117" selection-start-line="58" selection-start-column="117" selection-end-line="58" selection-end-column="117" />
               <folding />
             </state>
           </provider>
@@ -106,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1272727" vertical-offset="5762" max-vertical-offset="9915">
+            <state vertical-scroll-proportion="0.4" vertical-offset="5524" max-vertical-offset="9915">
               <caret line="380" column="11" selection-start-line="380" selection-start-column="11" selection-end-line="380" selection-end-column="11" />
               <folding />
             </state>
@@ -147,8 +144,8 @@
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/guest_request.html" />
         <option value="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/framework.css" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/how_it_works.html" />
-        <option value="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css" />
         <option value="$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html" />
+        <option value="$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css" />
       </list>
     </option>
   </component>
@@ -989,18 +986,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css">
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1272727" vertical-offset="5762" max-vertical-offset="9915">
-          <caret line="380" column="11" selection-start-line="380" selection-start-column="11" selection-end-line="380" selection-end-column="11" />
+        <state vertical-scroll-proportion="-3.4509804" vertical-offset="694" max-vertical-offset="1290">
+          <caret line="58" column="117" selection-start-line="58" selection-start-column="117" selection-end-line="58" selection-end-column="117" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimSimWeb/templates/SimSimWeb/index.html">
+    <entry file="file://$PROJECT_DIR$/SimSimWeb/static/SimSimWeb/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17067307" vertical-offset="829" max-vertical-offset="1290">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4" vertical-offset="5524" max-vertical-offset="9915">
+          <caret line="380" column="11" selection-start-line="380" selection-start-column="11" selection-end-line="380" selection-end-column="11" />
           <folding />
         </state>
       </provider>
