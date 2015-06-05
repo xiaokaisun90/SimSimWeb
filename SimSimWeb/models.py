@@ -5,10 +5,15 @@ class UserState(models.Model):
     user_state_id = models.IntegerField(primary_key=True)
     user_state_type = models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return self.user_state_type
+
 
 class UserRoleTypes(models.Model):
     user_role_type_id = models.IntegerField(primary_key = True)
     user_role_type = models.CharField(max_length=64)
+    def __unicode__(self):
+        return self.user_role_type
 
 
 class UserInfo(models.Model):
@@ -23,6 +28,9 @@ class UserInfo(models.Model):
     is_web_registered = models.CharField(max_length=1, null=True)
     # possible foreign key
     user_state_id = models.ForeignKey(UserState)
+    def __unicode__(self):
+        print(type(self.user_id))
+        return self.user_id.username
 
 
 class UserProfile(models.Model):
@@ -53,6 +61,8 @@ class Properties(models.Model):
     state = models.CharField(max_length=64)
     country = models.CharField(max_length=64)
     is_visible_to_guests = models.CharField(max_length=1)
+    def __unicode__(self):
+        return self.address + ", " + self.city + ", " + self.state + " " +self.zipcode + ", " + self.country
 
 
 class Locks(models.Model):
@@ -72,12 +82,17 @@ class Locks(models.Model):
     lock_power = models.FloatField()
     lock_start_angle = models.FloatField()
     lock_end_angle = models.FloatField()
+    def __unicode__(self):
+        return self.lock_purpose
 
 
 class PropertyLocks(models.Model):
     property_lock_id = models.IntegerField(primary_key=True)
     property_id = models.ForeignKey(Properties)
     lock_id = models.ForeignKey(Locks)
+    def __unicode__(self):
+        # print(type(self.lock_id))
+        return str(self.lock_id)
 
 
 class UserPropertyLocks(models.Model):
@@ -103,6 +118,8 @@ class UserNotificationPreferences(models.Model):
 class LockActivityType(models.Model):
     lock_activity_type_id = models.IntegerField(primary_key = True)
     lock_activity_type = models.CharField(max_length=64)
+    def __unicode__(self):
+        return self.lock_activity_type
 
 
 class LockActivity(models.Model):
@@ -110,7 +127,9 @@ class LockActivity(models.Model):
     lock_id = models.ForeignKey(Locks)
     lock_activity_type_id = models.ForeignKey(LockActivityType)
     lock_activity_time_stamp = models.DateTimeField()
-    user_id = models.IntegerField()
+    user_id = models.ForeignKey(UserInfo)
+    def __unicode__(self):
+        return user_id.username + LockActivityType.objects.get(id = lock_activity_type_id)
 
 
 class GuestAccessRequestQueue(models.Model):

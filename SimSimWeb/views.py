@@ -79,10 +79,24 @@ def family(request):
     return render(request, 'SimSimWeb/family.html', context)
 
 def lock_activity(request):
+    print("in lock activity right now")
     print(request.user)
-
-    context = {}
+    print(request.user.id)
+    print(type(request.user))
+    property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
+    print(len(property_list))
+    try:
+        selected_property = Properties.objects.get(pk = request.POST['current_property'])
+        print("got the properties")
+    except (KeyError, Properties.DoesNotExist):
+        property_activities = LockActivity.objects.all()
+        print("no property selected")
+    else:
+        property_activities = LockActivity.objects.all()
+    context = {'property_list': property_list, 'property_activities': property_activities}
     return render(request, 'SimSimWeb/lock_activity.html', context)
+
+
 def manage_properties(request):
     context = {}
     return render(request, 'SimSimWeb/manage_properties.html', context)

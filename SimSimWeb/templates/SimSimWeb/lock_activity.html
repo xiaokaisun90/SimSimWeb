@@ -67,12 +67,10 @@
 										<div class="col-md-2"></div>
 										<div class="col-md-4">
 											<select class="form-control input-xlarge select2me">
-												<option value="property">
-												Select Property to view
-												</option>
-												<option value="Option1">
-												Option1
-												</option>
+												<option name="current_property">All</option>
+												{%for property in property_list%}
+													<option name="current_property" value ="property.property_id">{{property}}</option>
+												{% endfor %}
 											</select>
 										</div>
 									</div>

@@ -1,0 +1,16 @@
+[
+	{
+		"model": "SimSimWeb.UserRoleTypes",
+		"fields": {
+			"user_role_type" : "home owner"
+		}
+	}
+	{
+		"model": "polls.choice",
+		"fields": {
+			"question": 11,
+			"choice_text": "i am who i am",
+			"vote": 12
+		}
+	}
+]
