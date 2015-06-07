@@ -1,0 +1,13 @@
+header {
+	z-index: 0 !important;
+} 
+
+#videos {
+	width: 100%;
+	position: absolute;
+	top: 180px;
+}
+
+#videos p {
+	padding-top: 10px;
+}

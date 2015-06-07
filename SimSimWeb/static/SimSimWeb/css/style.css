@@ -371,7 +371,7 @@ header * {
 
 .mute {
 	right: 20px;
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	font-size: 28px;
 }
@@ -654,3 +654,12 @@ footer {
 /*-----------------------------------------------------------------------------------*/
 /*	END RESPONSIVE STYLING
 /*-----------------------------------------------------------------------------------*/
+
+/*BEGIN CUSTOM STYLE*/
+/*#logo {
+	-webkit-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	-o-transform: scale(0.5);
+	transform: scale(0.5);
+}*/
+/*END CUSTOM STYLE*/
