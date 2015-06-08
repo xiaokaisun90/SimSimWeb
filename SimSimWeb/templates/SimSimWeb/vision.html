@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+{#	<style> #}
+{#        .backimg {#}
+{#            background-image: url("SimSimWeb/img/ocean.png");#}
+{#        }#}
+{#    </style>#}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>How it works.</title>
@@ -13,8 +18,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/framework.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/plugins.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/style.css' %}">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/howitwork.css' %}">
+    <link rel="shortcut icon" href="{% static 'SimSimWeb/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'SimSimWeb/img/favicon.ico' %}" type="image/x-icon">
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
@@ -23,7 +29,7 @@
 		<div class="wrapper clearfix">
 			<div class="one_fourth remove_bottom logo">
 				<a href="/">
-					<img src="{% static 'SimSimWeb/img/logo.png' %}" alt="logo" class="retina" />
+					<img src="{% static 'SimSimWeb/img/logo.png' %}" alt="logo" class="retina" id="logo"/>
 				</a>
 			</div><!--/one_fourth-->
 			<div class="three_fourths remove_bottom last">
@@ -39,10 +45,7 @@
 							<a href="/introduction/" class="scroller">How SimSim works</a>
 						</li>
 						<li>
-							<a href="/login/" class="scroller">Login</a>
-						</li>
-						<li>
-							<a href="/register/">Sign Up</a>
+							<a href="/login/" class="scroller">Sign in/Sign up</a>
 						</li>
 						<li>
 							<a href="#">Help</a>
@@ -58,8 +61,8 @@
 
 	<div id="videos">
 		<div>
-			<h3 class="text-center">SimSim Vison</h3>
-			<div class="text-center">
+			<h3 class="centered">SimSim Vision</h3>
+			<div class="centered">
 				<iframe width="672" height="378" src="https://www.youtube.com/embed/k8UJny3e8p0" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>

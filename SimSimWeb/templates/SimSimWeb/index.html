@@ -9,10 +9,14 @@
     <meta name="description" content="">
     {% load staticfiles %}
     <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/font-awesome.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/framework.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/plugins.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'SimSimWeb/css/style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'SimSimWeb/img/favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'SimSimWeb/img/favicon.ico' %}" type="image/x-icon">
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
@@ -60,8 +64,21 @@
 		<!-- <h1 class="mega">Opening Up Possibilities</h1> -->
 		<a class="mute muted" href="#"><i class="fa fa-volume-up"></i></a>
         <!-- <iframe src="https://player.vimeo.com/video/129704767?autoplay=1&loop=1&color=ff0179" width="1280" height="630" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+        <div id="caption">
+	        <p class="centered">Open Possibilities</p>
+        </div>
 	</section>
 	
+	<section id="footer">
+			
+		<div class="wrapper">
+			<p class="centered">© 2015 SimSim. All rights reserved.</p>
+			
+			<div class="clear"></div><!--CLEAR FLOATS-->
+		</div>
+		
+	</section>
+
 {#	<section class="small-padding dark-wrapper">#}
 {#			#}
 {#		<div class="wrapper">#}
@@ -83,7 +100,7 @@
         var BV = new $.BigVideo({useFlashForFirefox:false});
 		BV.init();
 		if ((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
-		    BV.show("{% static 'SimSimWeb/video/home.mp4' %}");
+		    BV.show("{% static 'SimSimWeb/img/cover.png' %}");
 		} else {
 		    BV.show("{% static 'SimSimWeb/video/home.mp4' %}"
 		    );
@@ -93,12 +110,14 @@
 		$('body').on('click', '.mute.muted', function(){
 			BV.getPlayer().volume(0.8);
 			$(this).removeClass('muted').addClass('unmuted');
+			console.log('unmuted');
 			return false;
 		});
 		
 		$('body').on('click', '.mute.unmuted', function(){
 			BV.getPlayer().volume(0);
 			$(this).removeClass('unmuted').addClass('muted');
+			console.log('muted');
 			return false;
 		});
     });

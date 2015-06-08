@@ -1,11 +1,7 @@
-header {
-	z-index: 0 !important;
-} 
-
 #videos {
 	width: 100%;
 	position: absolute;
-	top: 180px;
+	top: 140px;
 }
 
 #videos p {
