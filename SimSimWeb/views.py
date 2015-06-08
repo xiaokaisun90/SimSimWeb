@@ -85,6 +85,13 @@ def lock_activity(request):
     print(type(request.user))
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     print(len(property_list))
+    property_activities = LockActivity.objects.all()
+    context = {'property_list': property_list, 'property_activities': property_activities}
+    return render(request, 'SimSimWeb/lock_activity.html', context)
+
+def display_activity(request):
+    print("property selected")
+    property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     try:
         selected_property = Properties.objects.get(pk = request.POST['current_property'])
         print("got the properties")
@@ -93,8 +100,8 @@ def lock_activity(request):
         print("no property selected")
     else:
         property_activities = LockActivity.objects.all()
-    context = {'property_list': property_list, 'property_activities': property_activities}
-    return render(request, 'SimSimWeb/lock_activity.html', context)
+    return HttpResponseRedirect(reverse('SimSimWeb/lock_activity.html'))
+
 
 
 def manage_properties(request):

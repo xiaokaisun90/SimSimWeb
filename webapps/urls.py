@@ -1,6 +1,11 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+# urlpatterns = [
+#     url(r'^SimSimWeb/', include('SimSimWeb.urls', namespace="SimSimWeb")),
+#     url(r'^admin/', include(admin.site.urls)),
+# ]
+
 urlpatterns = patterns('',
     url(r'^$', 'SimSimWeb.views.home'),
     url(r'register', 'SimSimWeb.views.register', name='register'),
@@ -12,4 +17,5 @@ urlpatterns = patterns('',
     url(r'dashboard/lock_activity', 'SimSimWeb.views.lock_activity'),
     url(r'dashboard/manage_properties', 'SimSimWeb.views.manage_properties'),
     url(r'dashboard/profile', 'SimSimWeb.views.profile'),
+    url(r'dashboard/display_activity', 'SimSimWeb.views.display_activity')
 )

@@ -60,7 +60,7 @@
 						<div class="portlet-body">
 							<!-- BEGIN FORM-->
 							<br>
-							<form action="#" class="form-horizontal form-row-sepe">
+							<form action="{% url 'SimSimWeb:display_activity' %}" class="form-horizontal form-row-sepe">
 								<div class="form-body">
 									<div class="form-group">
 										<br>
@@ -73,6 +73,7 @@
 												{% endfor %}
 											</select>
 										</div>
+										<div class="col-md-2 col-md-offset-4"><button type="submit" class="btn blue">Select</button></div>
 									</div>
 								</div>
 							</form>
