@@ -4,6 +4,8 @@ from django.shortcuts import render
 from SimSimWeb.forms import *
 from SimSimWeb.models import *
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 
 def home(request):
@@ -85,22 +87,41 @@ def lock_activity(request):
     print(type(request.user))
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     print(len(property_list))
-    property_activities = LockActivity.objects.all()
+    property_activities = LockActivity.objects.all().order_by('lock_activity_time_stamp')
     context = {'property_list': property_list, 'property_activities': property_activities}
     return render(request, 'SimSimWeb/lock_activity.html', context)
 
 def display_activity(request):
-    print("property selected")
+    print("selecting property")
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
-    try:
-        selected_property = Properties.objects.get(pk = request.POST['current_property'])
-        print("got the properties")
-    except (KeyError, Properties.DoesNotExist):
+    context = {'property_list': property_list}
+    key = request.GET['select_property']
+    if(key == 'All'):
+        print("all selected")
         property_activities = LockActivity.objects.all()
-        print("no property selected")
     else:
+        print("a property is selected")
         property_activities = LockActivity.objects.all()
-    return HttpResponseRedirect(reverse('SimSimWeb/lock_activity.html'))
+        selected_property = property_list.get(property_id = key)
+        print(selected_property)
+
+    # try:
+    #     key = request.GET['select_property']
+    #     print(type(key))
+    #     selected_property = property_list.get(property_id = key)
+    #     print(request.GET['select_property'])
+    #     print(selected_property)
+    #     print("got the properties")
+    # except (KeyError, Properties.DoesNotExist):
+    #     property_activities = LockActivity.objects.all()
+    #     print("no property selected")
+    # else:
+    #     property_activities = LockActivity.objects.all()
+    #     print("property is selcted")
+
+    context = {'property_list': property_list, 'property_activities': property_activities}
+    print("rendering lock activity")
+    return render(request, 'SimSimWeb/lock_activity.html', context)
 
 
 

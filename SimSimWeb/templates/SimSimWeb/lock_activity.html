@@ -60,16 +60,17 @@
 						<div class="portlet-body">
 							<!-- BEGIN FORM-->
 							<br>
-							<form action="{% url 'SimSimWeb:display_activity' %}" class="form-horizontal form-row-sepe">
+							<form action="display_activity" class="form-horizontal form-row-sepe" methold = "post">
+								{% csrf_token %}
 								<div class="form-body">
 									<div class="form-group">
 										<br>
 										<div class="col-md-2"></div>
 										<div class="col-md-4">
-											<select class="form-control input-xlarge select2me">
-												<option name="current_property">All</option>
+											<select class="form-control input-xlarge select2me" name = "select_property">
+												<option>All</option>
 												{%for property in property_list%}
-													<option name="current_property" value ="property.property_id">{{property}}</option>
+													<option name="property" value ="{{property.property_id}}">{{property}}</option>
 												{% endfor %}
 											</select>
 										</div>
@@ -84,7 +85,16 @@
 										<div class="portlet-title">
 											<div class="caption">
 												<i class="icon-speech"></i>
-												<span class="caption"> Lock activity goes here </span>
+												<!-- <table class="table table-hover"> -->
+													<!-- <tbody> -->
+														{% for activity in property_activities %}
+															<!-- <tr> -->
+															<a href="">{{activity.user_id.username}} </a> 
+																<!-- <td>{{activity}}</td> -->
+															<!-- </tr> -->
+														{% endfor %}
+													<!-- </tbody> -->
+												<!-- </table> -->
 											</div>
 										</div>
 									</div>
