@@ -81,18 +81,22 @@
 							<br>
 							<div class="row">
 								<div class="col-md-offset-2 col-md-8">
-									<div class="portlet" style="overflow:scroll; height:400px;">
+									<div class="portlet">
+										<!-- style="overflow:scroll; height:400px;" -->
 										<div class="portlet-title">
 											<div class="caption" >
 												<!-- <i class="icon-speech"></i> -->
 												<!-- <table class="table table-hover"> -->
 													<!-- <tbody> -->
+													{% load endless %}
+														{% paginate property_activities %}
 														{% for activity in property_activities %}
 															<!-- <tr> --><a href="">{{activity.lock_id}}</a> {{activity.lock_activity_type_id}}ed by <a href="">{{activity.user_id.user_id.username}}</a> at {{activity.activityTime}} </br>
 														</br>
 																<!-- <td>{{activity}}</td> -->
 															<!-- </tr> -->
 														{% endfor %}
+													{% show_pages %}
 <!-- 														<div class="pagination">
 														    <span class="step-links">
 														        {% if property_activities.has_previous %}

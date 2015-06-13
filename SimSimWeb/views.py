@@ -96,19 +96,7 @@ def lock_activity(request):
     print(type(request.user))
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
-    activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
-    paginator = Paginator(activities, 5)
-    page = request.GET.get('page')
-    print (locks)
-    print(len(property_list))
-    try:
-        property_activities = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        property_activities = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        property_activities = paginator.page(paginator.num_pages)
+    property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
     context = {'property_list': property_list, 'property_activities': property_activities}
     return render(request, 'SimSimWeb/lock_activity.html', context)
 
