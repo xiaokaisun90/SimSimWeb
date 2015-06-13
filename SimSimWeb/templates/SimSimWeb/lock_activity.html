@@ -80,19 +80,34 @@
 							</form>
 							<br>
 							<div class="row">
-								<div class="col-md-offset-2 col-md-6">
-									<div class="portlet">
+								<div class="col-md-offset-2 col-md-8">
+									<div class="portlet" style="overflow:scroll; height:400px;">
 										<div class="portlet-title">
-											<div class="caption">
-												<i class="icon-speech"></i>
+											<div class="caption" >
+												<!-- <i class="icon-speech"></i> -->
 												<!-- <table class="table table-hover"> -->
 													<!-- <tbody> -->
 														{% for activity in property_activities %}
-															<!-- <tr> -->
-															<a href="">{{activity.user_id.username}} </a> 
+															<!-- <tr> --><a href="">{{activity.lock_id}}</a> {{activity.lock_activity_type_id}}ed by <a href="">{{activity.user_id.user_id.username}}</a> at {{activity.activityTime}} </br>
+														</br>
 																<!-- <td>{{activity}}</td> -->
 															<!-- </tr> -->
 														{% endfor %}
+<!-- 														<div class="pagination">
+														    <span class="step-links">
+														        {% if property_activities.has_previous %}
+														            <a href="?page={{ property_activities.previous_page_number }}">previous</a>
+														        {% endif %}
+
+														        <span class="current">
+														            Page {{ property_activities.number }} of {{ property_activities.paginator.num_pages }}
+														        </span>
+
+														        {% if property_activities.has_next %}
+														            <a href="?page={{ property_activities.next_page_number }}">next</a>
+														        {% endif %}
+														    </span>
+														</div> -->
 													<!-- </tbody> -->
 												<!-- </table> -->
 											</div>

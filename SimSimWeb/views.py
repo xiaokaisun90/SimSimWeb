@@ -6,10 +6,12 @@ from SimSimWeb.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def home(request):
     print 'come to home'
+    print(request.user.username)
     context = {}
     return render(request, "SimSimWeb/index.html", context)
 
@@ -78,16 +80,35 @@ def guest_list(request):
 
 def family(request):
     context = {}
+
+
     return render(request, 'SimSimWeb/family.html', context)
 
+
+# def list_activity(require):
+#     pass
+
+    
 def lock_activity(request):
     print("in lock activity right now")
     print(request.user)
     print(request.user.id)
     print(type(request.user))
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
+    locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
+    activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
+    paginator = Paginator(activities, 5)
+    page = request.GET.get('page')
+    print (locks)
     print(len(property_list))
-    property_activities = LockActivity.objects.all().order_by('lock_activity_time_stamp')
+    try:
+        property_activities = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        property_activities = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        property_activities = paginator.page(paginator.num_pages)
     context = {'property_list': property_list, 'property_activities': property_activities}
     return render(request, 'SimSimWeb/lock_activity.html', context)
 
@@ -98,27 +119,25 @@ def display_activity(request):
     key = request.GET['select_property']
     if(key == 'All'):
         print("all selected")
-        property_activities = LockActivity.objects.all()
+        locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
+        property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
+        # activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
     else:
         print("a property is selected")
-        property_activities = LockActivity.objects.all()
         selected_property = property_list.get(property_id = key)
-        print(selected_property)
-
+        locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id, propertylocks__property_id = selected_property)
+        property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
+        # activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
+    # paginator = Paginator(activities, 5)
+    # page = request.GET.get('page')
     # try:
-    #     key = request.GET['select_property']
-    #     print(type(key))
-    #     selected_property = property_list.get(property_id = key)
-    #     print(request.GET['select_property'])
-    #     print(selected_property)
-    #     print("got the properties")
-    # except (KeyError, Properties.DoesNotExist):
-    #     property_activities = LockActivity.objects.all()
-    #     print("no property selected")
-    # else:
-    #     property_activities = LockActivity.objects.all()
-    #     print("property is selcted")
-
+    #     property_activities = paginator.page(page)
+    # except PageNotAnInteger:
+    #     # If page is not an integer, deliver first page.
+    #     property_activities = paginator.page(1)
+    # except EmptyPage:
+    #     # If page is out of range (e.g. 9999), deliver last page of results.
+    #     property_activities = paginator.page(paginator.num_pages)
     context = {'property_list': property_list, 'property_activities': property_activities}
     print("rendering lock activity")
     return render(request, 'SimSimWeb/lock_activity.html', context)

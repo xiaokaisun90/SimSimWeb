@@ -119,7 +119,7 @@ class LockActivityType(models.Model):
     lock_activity_type_id = models.IntegerField(primary_key = True)
     lock_activity_type = models.CharField(max_length=64)
     def __unicode__(self):
-        return self.lock_activity_type
+        return self.lock_activity_type.lower()
 
 
 class LockActivity(models.Model):
@@ -130,6 +130,9 @@ class LockActivity(models.Model):
     user_id = models.ForeignKey(UserInfo)
     def __unicode__(self):
         return str(self.user_id.user_id.username) + " " + str(self.lock_activity_type_id) + " " + str(self.lock_id)
+
+    def activityTime(self):
+        return self.lock_activity_time_stamp.strftime("%m/%d/%Y %H:%M")
 
 
 class GuestAccessRequestQueue(models.Model):
