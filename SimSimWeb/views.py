@@ -97,7 +97,7 @@ def lock_activity(request):
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
     property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
-    context = {'property_list': property_list, 'property_activities': property_activities}
+    context = {'property_list': property_list, 'property_activities': property_activities, 'selected_property': "All"}
     return render(request, 'SimSimWeb/lock_activity.html', context)
 
 def display_activity(request):
@@ -105,10 +105,12 @@ def display_activity(request):
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
     context = {'property_list': property_list}
     key = request.GET['select_property']
+    print ("key"+key)
     if(key == 'All'):
-        print("all selected")
-        locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
-        property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
+        return lock_activity(request)
+        # print("all selected")
+        # locks = Locks.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id)
+        # property_activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
         # activities = LockActivity.objects.filter(lock_id = locks).order_by('-lock_activity_time_stamp')
     else:
         print("a property is selected")
@@ -126,7 +128,7 @@ def display_activity(request):
     # except EmptyPage:
     #     # If page is out of range (e.g. 9999), deliver last page of results.
     #     property_activities = paginator.page(paginator.num_pages)
-    context = {'property_list': property_list, 'property_activities': property_activities}
+    context = {'property_list': property_list, 'property_activities': property_activities, 'selected_property': selected_property}
     print("rendering lock activity")
     return render(request, 'SimSimWeb/lock_activity.html', context)
 

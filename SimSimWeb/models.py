@@ -159,6 +159,3 @@ class ApprovedAccessRequest(models.Model):
     allocated_access_end_time = models.DateTimeField()
     access_request_state_id = models.IntegerField()
     response_access_time_stamp = models.DateTimeField()
-
-
-

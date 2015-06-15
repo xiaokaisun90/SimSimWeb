@@ -58,3 +58,9 @@ class GuestAccessRequestForm(forms.Form):
         #     return forms.ValidationError('You should enter requested_access_start_time')
         # if not requested_access_end_time:
         #     return forms.ValidationError('You should enter requested_access_end_time')
+
+
+class FamilyMemberForm(forms.Form):
+    username = forms.CharField(label='Your name')
+    mobile_phone_number = forms.IntegerField()
+    

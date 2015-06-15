@@ -60,21 +60,20 @@
 						<div class="portlet-body">
 							<!-- BEGIN FORM-->
 							<br>
-							<form action="display_activity" class="form-horizontal form-row-sepe" methold = "post">
+							<form name="selectProperty" action="display_activity" class="form-horizontal form-row-sepe" methold = "post">
 								{% csrf_token %}
 								<div class="form-body">
 									<div class="form-group">
 										<br>
-										<div class="col-md-2"></div>
-										<div class="col-md-4">
-											<select class="form-control input-xlarge select2me" name = "select_property">
+										<div class="col-md-offset-2 col-md-8">
+											<select class="form-control input-xlarge select2me" name = "select_property" onChange="selectProperty.submit();">
+												<option></option>
 												<option>All</option>
 												{%for property in property_list%}
 													<option name="property" value ="{{property.property_id}}">{{property}}</option>
 												{% endfor %}
 											</select>
 										</div>
-										<div class="col-md-2 col-md-offset-4"><button type="submit" class="btn blue">Select</button></div>
 									</div>
 								</div>
 							</form>
@@ -84,6 +83,7 @@
 									<div class="portlet">
 										<!-- style="overflow:scroll; height:400px;" -->
 										<div class="portlet-title">
+											<h3>Property: {{selected_property}} </h3>
 											<div class="caption" >
 												<!-- <i class="icon-speech"></i> -->
 												<!-- <table class="table table-hover"> -->
