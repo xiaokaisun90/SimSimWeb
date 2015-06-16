@@ -3,6 +3,7 @@ from django.db import transaction
 from django.shortcuts import render
 from SimSimWeb.forms import *
 from SimSimWeb.models import *
+from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
 
@@ -51,16 +52,23 @@ def dashboard(request):
         context['form'] = GuestAccessRequestForm()
         print context
         return render(request, 'SimSimWeb/guest_request.html', context)
-    form = RegistrationForm(request.POST)
+    form = GuestAccessRequestForm(request.POST)
     context['form'] = form
+    print 'come into post'
     if not form.is_valid():
         print 'form is not valid'
         context['form'] = form
         return render(request, 'SimSimWeb/guest_request.html', context)
     else:
-        new_guest_request = GuestAccessRequestQueue(property_id=request.POST['property_id'],
-
-        )
+        print 'come into else'
+        if 'Option1'in request.POST:
+            print 'option1'
+        if 'repeat' in request.POST:
+            print 'repeat is here'
+        else:
+            print 'no repeat'
+        # new_guest_request = GuestAccessRequestQueue(property_id=request.POST['property_id'],
+        # )
 
     return render(request, 'SimSimWeb/guest_request.html', context)
 def introduction(request):
