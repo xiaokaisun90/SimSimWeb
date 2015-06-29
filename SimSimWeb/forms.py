@@ -1,4 +1,6 @@
 from django import forms
+# from django import ModelForm
+
 from SimSimWeb.models import *
 
 class RegistrationForm(forms.Form):
@@ -59,8 +61,22 @@ class GuestAccessRequestForm(forms.Form):
         # if not requested_access_end_time:
         #     return forms.ValidationError('You should enter requested_access_end_time')
 
+class selectPropertyForm(forms.Form):
+    property = forms.ModelChoiceField(queryset = Properties.objects.all(), widget=forms.Select(attrs={'class': 'form-control input-xlarge select2me', 'onChange': 'select_property.submit()'}), label = '' );
+
+# class selectPropertyForm(ModelForm):
+#     class Meta:
+#         model = Properties
+#         # model = UserPropertyLocks
+#         selected_property = 
+
+class familyMemberForm(forms.Form):
+    username = forms.CharField(label = 'Name', widget = forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Sanny'}))
+    mobile = forms.CharField(label = 'Mobile', widget = forms.TextInput(attrs = {'class': 'form-control', 'placeholder': '123-456-7890'}))
+
 
 class FamilyMemberForm(forms.Form):
     username = forms.CharField(label='Your name')
-    mobile_phone_number = forms.IntegerField()
+    mobile_phone_number = forms.CharField()
+    
     

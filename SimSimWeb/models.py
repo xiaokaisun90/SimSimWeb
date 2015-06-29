@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from django.forms.formsets import formset_factory
 
 class UserState(models.Model):
     user_state_id = models.IntegerField(primary_key=True)

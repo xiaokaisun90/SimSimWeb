@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
+
 def home(request):
     print 'come to home'
     print(request.user.username)
@@ -79,8 +80,27 @@ def guest_list(request):
     return render(request, 'SimSimWeb/guest_list.html', context)
 
 def family(request):
-    context = {}
+    property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
+    context = dict()
+    if request.method == 'POST':
+        formOne = selectPropertyForm(request.POST)
+        formTwo = familyMemberForm(request.POST)
+        print('we got here')
+        if formOne.is_valid():
+            key = formOne.cleaned_data['property']
+            print(type(key))
+            context['selected_property'] = key
+        elif formTwo.is_valid():
+            print("fuckoff")
+    else:
+        formOne = selectPropertyForm()
+        formTwo = familyMemberForm()
+    context['selectPropertyForm'] = formOne
+    context['familyMemberForm'] = formTwo
+    
 
+
+        
 
     return render(request, 'SimSimWeb/family.html', context)
 

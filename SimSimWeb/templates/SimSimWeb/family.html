@@ -60,19 +60,15 @@
 						<div class="portlet-body">
 							<!-- BEGIN FORM-->
 							<br>
-							<form action="#" class="form-horizontal form-row-sepe">
+							<form name= "select_property" action="#" class="form-horizontal form-row-sepe" method = "POST">
+								{% csrf_token %}
 								<div class="form-body">
 									<div class="form-group">
 										<br>
 										<div class="col-md-4">
-											<select class="form-control input-xlarge select2me">
-												<option value="property">
-												Select Property to view
-												</option>
-												<option value="Option1">
-												Option1	
-												</option>
-											</select>
+											{{selectPropertyForm}}
+<!-- 											<select class="form-control input-xlarge select2me">
+											</select> -->
 										</div>
 									</div>
 								</div>
@@ -92,19 +88,34 @@
 								365 Ophelia St
 							</h1>
 							<br>
-							<form action="#" class="form-horizontal form-row-sepe" name="add_family_member">
+							<form name="family_member" action="family" class="form-horizontal form-row-sepe" name="add_family_member" method="post">
+								{% csrf_token %}
 								<div class="form-body">
-									<div class="form-group">
-										<label class="control-label col-md-3">Name</label>
-										<div class="col-md-4">
-											<div class="input-group">
-												<span class="input-group-addon">
-												<i class="fa fa-child"></i>
-												</span>
-												<input type="text" class="form-control" placeholder="Sanny" name="mobile">
+									<!-- {{familyMemberForm}} -->
+									{%for field in familyMemberForm%}
+										<div class="form-group">
+											<label class="control-label col-md-3">Name</label>
+											<div class="col-md-4">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="fa fa-child"></i>
+													</span>
+													{{field}}
+												</div>
 											</div>
 										</div>
-									</div>
+									{%endfor%}
+<!-- 										<div class="form-group">
+											<label class="control-label col-md-3">Name</label>
+											<div class="col-md-4">
+												<div class="input-group">
+													<span class="input-group-addon">
+													<i class="fa fa-child"></i>
+													</span>
+													<input type="text" class="form-control" placeholder="Sanny" name="mobile">
+												</div>
+											</div>
+										</div>
 									<div class="form-group">
 										<label class="control-label col-md-3">Mobile</label>
 										<div class="col-md-4">
@@ -115,7 +126,7 @@
 												<input type="text" class="form-control" placeholder="412-209-9231" name="mobile">
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="form-actions">
 										<div class="row">
 											<div class="col-md-offset-6">
