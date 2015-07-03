@@ -17,5 +17,9 @@ urlpatterns = patterns('',
     url(r'dashboard/lock_activity', 'SimSimWeb.views.lock_activity'),
     url(r'dashboard/manage_properties', 'SimSimWeb.views.manage_properties'),
     url(r'dashboard/profile', 'SimSimWeb.views.profile'),
-    url(r'dashboard/display_activity', 'SimSimWeb.views.display_activity')
+    url(r'dashboard/display_activity', 'SimSimWeb.views.display_activity'),
+    url(r'dashboard/addMember', 'SimSimWeb.views.addMember', name='addMember'),
+    url(r'dashboard/deleteMember', 'SimSimWeb.views.deleteMember', name='deleteMember'),
+    # url(r'dashboard/addMember/(?P<selected_property>)/$', 'SimSimWeb.views.addMember', name='addMember')
+
 )

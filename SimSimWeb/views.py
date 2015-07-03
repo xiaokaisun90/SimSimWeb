@@ -79,36 +79,120 @@ def guest_list(request):
     context = {}
     return render(request, 'SimSimWeb/guest_list.html', context)
 
+
+
 def family(request):
+    print('!!!!!!!calling family function')
     property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
+    selected_property = None
     context = dict()
     if request.method == 'POST':
         formOne = selectPropertyForm(request.POST)
-        formTwo = familyMemberForm(request.POST)
+        # formTwo = familyMemberForm(request.POST)
         print('we got here')
         if formOne.is_valid():
-            key = formOne.cleaned_data['property']
-            print(type(key))
-            context['selected_property'] = key
-        elif formTwo.is_valid():
-            print("fuckoff")
+            # print('input in form one')
+            selected_property = formOne.cleaned_data['property']
+            print(type(selected_property))
+            context['selected_property'] = selected_property
+            formTwo = familyMemberForm()
+            print('formone complete')
+            context['family_list'] = familyMemberHelper(selected_property)
+            print(context['family_list'])
+        # elif formTwo.is_valid():
+        #     print('input in form two')
+        #     mobile = formTwo.process_mobile()
+        #     print mobile
+        #     print("fuckoff")
+        #     formOne = selectPropertyForm()
     else:
+        print('no input')
+        # print(list(property_list[:1])[0])
         formOne = selectPropertyForm()
-        formTwo = familyMemberForm()
+        # formTwo = familyMemberForm()
+        formTwo = False
+
+    formOne.fields["property"].queryset = property_list
     context['selectPropertyForm'] = formOne
     context['familyMemberForm'] = formTwo
     
 
-
-        
-
     return render(request, 'SimSimWeb/family.html', context)
 
+def addMember(request):
+    print('!!!!!!!calling addmember function')
+    property_list = Properties.objects.filter(propertylocks__userpropertylocks__user_id = request.user.id).distinct()
+    context = {}
 
+    if request.method == 'POST':
+        formTwo = familyMemberForm(request.POST)
+        selected_property_pk = request.POST['current']
+        selected_property = Properties.objects.get(pk = selected_property_pk)
+        context['selected_property'] = selected_property
+        print('this is before checking'+selected_property_pk)
+        print('start checking ')
+        if formTwo.is_valid():
+            print('input in form two')
+            mobile = formTwo.process_mobile()
+            member = UserInfo.objects.get(primary_mobile_number = mobile)
+            propertyLocks = PropertyLocks.objects.filter(property_id = selected_property)
+            userRoleType = UserRoleTypes.objects.get(user_role_type__contains = 'family')
+            for lock in propertyLocks:
+                userPropertyLock = UserPropertyLocks(user_id = member, property_lock_id = lock, user_role_type_id = userRoleType)
+                userPropertyLock.save()
+            print (selected_property)
+            print (type(selected_property))
+            print mobile
+
+            userRole = UserRoleTypes.objects.get(user_role_type__contains = 'family')
+            member = UserInfo.objects.get(primary_mobile_number = mobile).user_id
+
+            print("fuckoff")
+    else:
+        print('no input')
+        # print(list(property_list[:1])[0])
+        # formTwo = familyMemberForm()
+        formTwo = familyMemberForm()
+    context['family_list'] = familyMemberHelper(selected_property)
+    formOne = selectPropertyForm()
+    formOne.fields["property"].queryset = property_list
+    context['selectPropertyForm'] = formOne
+    context['familyMemberForm'] = formTwo
+    return render(request, 'SimSimWeb/family.html', context)
 # def list_activity(require):
 #     pass
 
-    
+def familyMemberHelper(property_id):
+    familyList = []
+    propertyLocks = PropertyLocks.objects.filter(property_id = property_id)
+    familyLocks = UserPropertyLocks.objects.filter(property_lock_id = propertyLocks, user_role_type_id__user_role_type__contains = 'family')
+    for lock in familyLocks:
+        if lock.user_id not in familyList:
+            familyList.append(lock.user_id)
+    return familyList
+
+def deleteMember(request):
+    context={}
+    if request.method == 'POST':
+        mobile = request.POST['member']
+        member = UserInfo.objects.get(primary_mobile_number = mobile)
+        print(member)
+        print(type(member))
+        property_id = request.POST['current']
+        selected_property = Properties.objects.get(pk = property_id)
+    propertyLocks = PropertyLocks.objects.filter(property_id = selected_property)
+    familyLocks = UserPropertyLocks.objects.filter(property_lock_id = propertyLocks, user_id = member)
+    print(len(familyLocks))
+    for lock in familyLocks:
+        lock.delete()
+    familyLocks = UserPropertyLocks.objects.filter(property_lock_id = propertyLocks, user_id = member)
+    print(len(familyLocks))
+    context['selected_property'] = selected_property
+    context['selectPropertyForm'] = selectPropertyForm()
+    context['familyMemberForm'] = familyMemberForm()
+    context['family_list'] = familyMemberHelper(selected_property)
+    return render(request, 'SimSimWeb/family.html', context)
+
 def lock_activity(request):
     print("in lock activity right now")
     print(request.user)

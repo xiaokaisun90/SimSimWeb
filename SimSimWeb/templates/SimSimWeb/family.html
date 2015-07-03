@@ -60,7 +60,7 @@
 						<div class="portlet-body">
 							<!-- BEGIN FORM-->
 							<br>
-							<form name= "select_property" action="#" class="form-horizontal form-row-sepe" method = "POST">
+							<form name= "select_property" action="family" class="form-horizontal form-row-sepe" method = "POST">
 								{% csrf_token %}
 								<div class="form-body">
 									<div class="form-group">
@@ -76,6 +76,7 @@
 						</div>
 					</div>
 				</div>
+				{%if familyMemberForm != False %}
 				<div class="col-md-6 col-sm-12">
 					<div class="portlet box blue-hoki">
 						<div class="portlet-title">
@@ -85,22 +86,25 @@
 						</div>
 						<div class="portlet-body">
 							<h1 class="col-md-offset-2">
-								365 Ophelia St
+								{{selected_property}}
 							</h1>
 							<br>
-							<form name="family_member" action="family" class="form-horizontal form-row-sepe" name="add_family_member" method="post">
+							<form name="family_member" action={% url 'addMember' %} class="form-horizontal form-row-sepe" name="add_family_member" method="POST">
 								{% csrf_token %}
 								<div class="form-body">
-									<!-- {{familyMemberForm}} -->
+									<input type='hidden' name='current' value={{selected_property}}>
 									{%for field in familyMemberForm%}
 										<div class="form-group">
-											<label class="control-label col-md-3">Name</label>
+											<label class="control-label col-md-3">{{field.label}}</label>
 											<div class="col-md-4">
 												<div class="input-group">
 													<span class="input-group-addon">
 													<i class="fa fa-child"></i>
 													</span>
-													{{field}}
+														{{field}}
+												</div>
+												<div>
+													{{field.errors}}
 												</div>
 											</div>
 										</div>
@@ -146,7 +150,22 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
+								{%for member in family_list %}
+									<tr>
+										<td>{{member.user_id.username}}</td>
+										<td>{{member.user_id.first_name}} {{member.user_id.last_name}}</td>
+										<td>
+											<form name= "delete_member" action="deleteMember" method = "POST">
+												{% csrf_token %}
+												<input type='hidden' name='member' value={{member.primary_mobile_number}}>
+												<input type='hidden' name='current' value={{selected_property}}>
+												<button type="submit" class="btn btn-link btn-xs">remove</button>
+											</form>
+										</td>
+										<!-- <td><a class="delete" href="javascript:;"> Delete </a></td> -->
+									</tr>
+								{%endfor%}
+<!-- 							<tr>
 								<td> Bob </td>
 								<td> Bob Nilson </td>
 								<td><a class="delete" href="javascript:;"> Delete </a></td>
@@ -155,11 +174,12 @@
 								<td> alex </td>
 								<td> Alex Nilson </td>
 								<td><a class="delete" href="javascript:;"> Delete </a></td>
-							</tr>
+							</tr> -->
 						</div>
 					</div>
 				</div>
 			</div>
+			{%endif%}
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
